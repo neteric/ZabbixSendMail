@@ -33,7 +33,7 @@ class ZabbixSendMail(object):
             msg['Subject'] = self.mail_subject
 
             server = smtplib.SMTP_SSL(self.smtp_server_addr,
-self.smtp_server_port)
+                                      self.smtp_server_port)
             server.login(self.sender, self.smtp_server_passwd)
             server.sendmail(self.sender, self.reciver, msg.as_string())
             server.quit()
