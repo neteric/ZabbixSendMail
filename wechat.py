@@ -62,7 +62,6 @@ class WechatAlert(object):
                              % (AppMsgSendUri,
                                 access_token),
                              data=json.dumps(params)).read()
-        # TODO： find Token exprie right errcode
         errcode = json.loads(res).get('errcode')
         if errcode == 40014:
             raise AccessTokenError
